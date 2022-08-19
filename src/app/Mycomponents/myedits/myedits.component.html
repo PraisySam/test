@@ -1,0 +1,12 @@
+<app-add-text (toAdd)="add($event)" ></app-add-text>
+
+<h2 class="container p-5 m-5"style="text-align: center;">My Templates</h2>
+<div class="container m-3 p-3" id="mypost">
+    <div *ngIf="this.posts.length===0; else elseBlock">No EDITS to display</div>
+    <ng-template #elseBlock>
+        <div *ngFor="let post of posts">
+            <app-post [post]="post" (toDelete)="delete($event)"></app-post>
+        </div>
+    </ng-template>
+
+</div>

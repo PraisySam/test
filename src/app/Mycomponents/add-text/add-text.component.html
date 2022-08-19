@@ -1,0 +1,52 @@
+<div class="my-3">
+  <h4>Add Content</h4>
+  <form (ngSubmit)="onSubmit()" ng-change="onchange()" ngNativeValidate>
+    <div class="form-group">
+      <label for="heading">OFFER Heading</label>
+      <input type="text" [(ngModel)]="heading" ngModel required class="form-control" id="heading" [formControl]="name"
+        name="heading" aria-describedby="">
+    </div>
+    <div class="form-group" >
+      <label for="headingcolor">Heading color</label>
+      <input type="color" [(ngModel)]="headingcolor" ngModel required class="form-control" id="headingcolor" [formControl]="color1"
+        name="headingcolor" aria-describedby="">
+    </div>
+    <div class="form-group">
+      <label for="discount">OFFER Dicount</label>
+      <input type="text" class="form-control" name="discount" id="discount" [formControl]="desc" [(ngModel)]="discount">
+    </div>
+    <div class="form-group" >
+      <label for="discountcolor">Discount color</label>
+      <input type="color" [(ngModel)]="discountcolor" ngModel required class="form-control" id="discountcolor" [formControl]="color2"
+        name="discountcolor" aria-describedby="">
+    </div>
+    <div class="form-group">
+      <fieldset>
+        <legend>
+          Select a Suitable Background
+        </legend>
+        <div class="row">
+          <div class="col my-3" *ngFor="let userBG of userBGs">
+            <input type="radio" name="image" ngModel required class="sr-only" value="{{userBG.image}}"
+              id="{{userBG.id}}" [(ngModel)]="image">
+            <label for="{{userBG.id}}" class="post px-2">
+
+              <img src="{{userBG.image}}" width="350" height="250" alt="Sample1">
+              <h6><font color="{{color1.value}}">{{name.value}}</font></h6>
+              <p><font color="{{color2.value}}">{{desc.value}}</font></p>
+              
+            </label>
+
+          </div>
+        </div>
+
+
+      </fieldset>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+
+  </form>
+
+
+</div>

@@ -1,0 +1,35 @@
+.post {
+    position: relative;
+}
+
+.post h6 {
+    position: absolute;
+    text-align: center;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+    color: rgb(5, 5, 5);
+    font-weight: bold;
+    font-size: 1.5em;
+    font-family: Quicksand, sans-serif;
+}
+.post p {
+    position: absolute;
+    text-align: center;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    font-size: 1em;
+    font-family: Quicksand, sans-serif;
+}
+
+#headingcolor, 
+#discountcolor{
+    max-width: 5%;
+    margin-top: 1%;
+}

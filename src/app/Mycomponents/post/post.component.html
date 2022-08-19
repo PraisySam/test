@@ -1,0 +1,73 @@
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js">
+    var app = angular.module("app", []);
+
+app.controller('exampleController', [
+    window.onload = function() {
+        html2canvas(document.getElementById("imagewrap"), {
+          onrendered: function(canvas) {
+            canvas.className = "html2canvas";
+            document.getElementById("canvasWrapper").appendChild(canvas);
+            var image = canvas.toDataURL("image/png");
+            document.getElementById("downloadLink").href = image;
+          },
+          useCORS: true
+        });
+      }
+    ]);
+</script>
+
+<div class="input-group mx-5 my-5" ng-click="zoom()">
+    <div class="row">
+        <div class="col">
+            <div class="post" id="imagewrap"  >
+                <!--<a href="../../../assets/images/image (3).png" download="myimage">-->
+                <img src="{{post.image}}" width="500" height="350" alt="Sample1">
+                <h6>{{post.heading}}</h6>
+                <p>Look at Discount of <span style="color:red;">{{post.discount}}</span> on all Items.**</p>
+            </div>
+            <div id="canvasWrapper" class="outer">
+                <p>Try right-click, save image as!</p>
+                <p>Or, <a id="downloadLink" download="image.png" href="{{post.image}}">Click Here to Download!</a>
+            </div>
+            
+        </div>
+
+    </div>
+    <div class="col ">
+        <button class="btn btn-primary" id="button">View</button>
+    </div>
+    <div class="col ">
+        <button class="btn btn-primary" id="button2">Edit</button>
+    </div>
+    <div class="col ">
+        <button class="btn btn-danger" id="button3" (click)="onClick(post)">Delete</button>
+    </div>
+</div>
+<!--
+<div class="outer">
+    <p>DOM-rendered</p>
+    <p>&nbsp;</p>
+    
+    <div id="imagewrap" class="wrap" style="border-style: solid;">
+        <img src="https://i.imgur.com/EFM76Qe.jpg?1" id="img_prev" width="170" />
+        <h3 class="desc">Something <br /><span style="color: blue;">Inspirational</span></h3>
+        <span id="wow">WOW!</span>
+    </div>
+</div>
+<div id="canvasWrapper" class="outer">
+    <p>Canvas-rendered (try right-click, save image as!)</p>
+    <p>Or, <a id="downloadLink" download="cat.png">Click Here to Download!</a>
+</div>
+Sample method to download image
+<div class="outer">
+    <div id="imagewrap" class="wrap" >
+        <img src="" id="img_prev" width="170" />
+        <h3 class="desc"> <br/><span style="color: rgb(255, 0, 0);"></span> </h3>
+        <span id="wow"></span>
+    </div>
+</div>
+<div id="canvasWrapper" class="outer">
+    <p></p>
+    <p> <a id="downloadLink" download="cat.png"></a>
+</div>-->

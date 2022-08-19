@@ -1,0 +1,54 @@
+.post {
+    position: relative;
+}
+
+.post h6 {
+    position: absolute;
+    text-align: center;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+    color: rgb(5, 5, 5);
+    font-weight: bold;
+    font-size: 2em;
+    font-family: Quicksand, sans-serif;
+}
+.post p {
+    position: absolute;
+    text-align: center;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 1.5em;
+    font-family: Quicksand, sans-serif;
+}
+
+#button{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    width: 8%;
+
+}
+#button2{
+    position: absolute;
+    top: 70%;
+    left: 60%;
+    width: 8%;
+}
+#button3{
+    position: absolute;
+    top: 70%;
+    left: 70%;
+    width: 8%;
+}
+
+.html2canvas {
+    display: none;
+}
